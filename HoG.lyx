@@ -1,0 +1,9756 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsart
+\begin_preamble
+\renewcommand{\ref}{\cref}
+\usepackage{needspace}
+\usepackage{acronym}
+
+
+\def\nwendcode{\endtrivlist \endgroup}
+\let\nwdocspar=\par
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+acronym
+oz
+noweb
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "../../Books/MathMacros.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acrodef{HoG}{House of Games}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+
+\noun on
+HoG
+\end_layout
+
+\begin_layout Abstract
+The 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HoG}
+\end_layout
+
+\end_inset
+
+ is a collection of classes and functions working together to provide a
+ basic facility for the writing of programs involving games.
+ We write the specification of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ac{HoC}
+\end_layout
+
+\end_inset
+
+ using 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acrodef{OZ}{Object-Z}
+\backslash
+ac{OZ}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename HouseofGames.jpeg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+House of Games.
+ Directed by David Mamet.
+ Produced by Michael Hausman.
+ Written by David Mamet.
+ Distributed by Orion Pictures.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Definitions
+\end_layout
+
+\begin_layout Subsection
+The board.
+\end_layout
+
+\begin_layout Standard
+A (board) game
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Quote
+\begin_inset Quotes qld
+\end_inset
+
+Board games are traditionally a subset of tabletop games that involve counters
+ or pieces moved or placed on a pre-marked surface or "board", according
+ to a set of rules.
+\begin_inset Quotes qrd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://en.wikipedia.org/wiki/Board_game
+\end_layout
+
+\end_inset
+
+,
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ContributorstoWikimediaprojects2020Dec"
+literal "true"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Quote
+\begin_inset Quotes qld
+\end_inset
+
+
+\series bold
+board game
+\series default
+ ● 
+\emph on
+n
+\emph default
+.
+ a game that involves the movement of counters or other objects around a
+ board.
+\begin_inset Quotes qrd
+\end_inset
+
+,
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Soanes2002"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, as far as HoG is concerned, is a collection of 
+\emph on
+places
+\emph default
+ that are themselves collections of 
+\emph on
+counters
+\emph default
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Quote
+\begin_inset Quotes qld
+\end_inset
+
+or bit, checker, chip, disc, draughtsman, man, meeple, mover, pawn, game
+ piece, player piece, playing piece, singleton, stone, token, unit.
+\begin_inset Quotes qrd
+\end_inset
+
+ and HoG wants to add 
+\begin_inset Quotes qld
+\end_inset
+
+card or playing card
+\begin_inset Quotes qrd
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The set of counters is given by the basic type: 
+\begin_inset Flex THBasicType
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "basictype:counters"
+
+\end_inset
+
+
+\begin_inset Formula $\left[\mbf C\right]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, while the set of places is given by the basic type: 
+\begin_inset Flex THBasicType
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "basictype:places"
+
+\end_inset
+
+
+\begin_inset Formula $\left[\mbf P\right]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex THaxiom
+status open
+
+\begin_layout Plain Layout
+The 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cref{basictype:counters,basictype:places}
+\end_layout
+
+\end_inset
+
+ satisfy the partition axiom:
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex OZaxdef
+status open
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ST$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ST
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mbf C\cap\mbf P=\emptyset$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mbf C
+\backslash
+cap
+\backslash
+mbf P=
+\backslash
+emptyset
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex THschema
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "schema:board"
+
+\end_inset
+
+A 
+\emph on
+board
+\emph default
+ is a collection of counters and places such that each counter has (is placed
+ on) one and only one place.
+ The schema 
+\begin_inset Formula $Board$
+\end_inset
+
+ declares and defines this in a rigorous way.
+\end_layout
+
+\begin_layout Plain Layout
+The available counters 
+\begin_inset Formula $C$
+\end_inset
+
+ on the board are taken from the pool of counters 
+\begin_inset Formula $\mbf C$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex OZzed
+status open
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $Counter\sdef\left[\,C:\power\mbf C\,\right]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Counter
+\backslash
+sdef
+\backslash
+left[
+\backslash
+,C:
+\backslash
+power
+\backslash
+mbf C
+\backslash
+,
+\backslash
+right]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+The available places 
+\begin_inset Formula $P$
+\end_inset
+
+ on the board are taken from the pool of places 
+\begin_inset Formula $\mbf P$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex OZzed
+status open
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $Place\sdef\left[\,P:\power\mbf P\,\right]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Place
+\backslash
+sdef
+\backslash
+left[
+\backslash
+,P:
+\backslash
+power
+\backslash
+mbf P
+\backslash
+,
+\backslash
+right]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+The administration of the distribution of counters over the places is kept
+ by the partial set-valued function 
+\begin_inset Formula $C_{\_}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex OZzed
+status open
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $Dist\sdef\left[\,C_{\_}:\mbf P\pfun\power\mbf C\,\right]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Dist
+\backslash
+sdef
+\backslash
+left[
+\backslash
+,C_{
+\backslash
+_}:
+\backslash
+mbf P
+\backslash
+pfun
+\backslash
+power
+\backslash
+mbf C
+\backslash
+,
+\backslash
+right]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex OZSchema
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Board
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $Counter$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Counter
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $Place$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Place
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $Dist$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Dist
+\backslash
+comment{1}
+\backslash
+ST
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\dom C_{\_}=P$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+dom C_{
+\backslash
+_}=P
+\backslash
+comment{2}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Famb CpP\partitions C$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Famb CpP
+\backslash
+partitions C
+\backslash
+comment{3}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Subsection
+Building a board.
+\end_layout
+
+\begin_layout Standard
+There are four operations to build a board, i.e.
+ adding and removing places and counters, resp.
+ from and to their respective pools.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex THOperation
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "operation:aplace"
+
+\end_inset
+
+Adding a place 
+\begin_inset Formula $p?$
+\end_inset
+
+ from the pool 
+\begin_inset Formula $\mbf P$
+\end_inset
+
+ to the board adds an 
+\emph on
+empty
+\emph default
+ place, i.e.
+ a place 
+\begin_inset Formula $p?$
+\end_inset
+
+ such that 
+\begin_inset Formula $C_{p?}=\emptyset$
+\end_inset
+
+.
+ If the place 
+\begin_inset Formula $p?$
+\end_inset
+
+ is already on board then the operations skips.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex OZSchema
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+APlace1
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Xi Counter$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Xi Counter
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Delta Place$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Delta Place
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Delta Dist$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Delta Dist
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $p?:\mbf P$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+p?:
+\backslash
+mbf P
+\backslash
+ST
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $p?\notin P$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+p?
+\backslash
+notin P
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $P'=P\cup\SetD{p?}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+P'=P
+\backslash
+cup
+\backslash
+SetD{p?}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{\_}'=C_{\_}\cup\SetD{p?\mapsto\emptyset}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+C_{
+\backslash
+_}'=C_{
+\backslash
+_}
+\backslash
+cup
+\backslash
+SetD{p?
+\backslash
+mapsto
+\backslash
+emptyset}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex OZzed
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Sdef{APlace2}{\Xi Board;p?:\mbf P}{p?\in P}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sdef{APlace2}{
+\backslash
+Xi Board;p?:
+\backslash
+mbf P}{p?
+\backslash
+in P}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex OZzed
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $APlace\sdef APlace1\zor APlace2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+APlace
+\backslash
+sdef APlace1
+\backslash
+zor APlace2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Lemma
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Consistency lemma APlace
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "lem:aplace"
+
+\end_inset
+
+
+\begin_inset Formula $\shows\Al{Board\zand APlace}{Board'}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+See 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cref{proof:aplace}
+\end_layout
+
+\end_inset
+
+ for the proof.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\dom C_{\_}'=\dom C_{\_}\cup\SetD{p?}=P\cup\SetD{p?}=P'$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Let 
+\begin_inset Formula $p,q\in\dom C_{\_}'\land p\neq q$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $C_{p}'\cap C_{p?}'=C_{p?}'\cap C_{q}'=\emptyset$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\bigcup_{p}C_{p}'=\left(\bigcup_{p}C_{p}\right)\cup C_{p?}'=C\cup\emptyset=C=C'$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex THOperation
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "operation:rplace"
+
+\end_inset
+
+Removing a place 
+\begin_inset Formula $p?$
+\end_inset
+
+ from the board removes the counters that were placed on 
+\begin_inset Formula $p?$
+\end_inset
+
+ as well.
+ If the place 
+\begin_inset Formula $p?$
+\end_inset
+
+ is not on the board then the operations skips.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex OZSchema
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+RPlace1
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Delta Counter$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Delta Counter
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Delta Place$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Delta Place
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Delta Dist$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Delta Dist
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $p?:\mbf P$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+p?:
+\backslash
+mbf P
+\backslash
+ST
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $p?\in P$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+p?
+\backslash
+in P
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $C'=C\setminus C_{p?}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+C'=C
+\backslash
+setminus C_{p?}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $P'=P\setminus\SetD{p?}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+P'=P
+\backslash
+setminus
+\backslash
+SetD{p?}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{\_}'=\SetD{p?}\dsub C_{\_}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+C_{
+\backslash
+_}'=
+\backslash
+SetD{p?}
+\backslash
+dsub C_{
+\backslash
+_}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex OZzed
+status open
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Sdef{RPlace2}{\Xi Board;p?:\mbf P}{p?\notin P}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sdef{RPlace2}{
+\backslash
+Xi Board;p?:
+\backslash
+mbf P}{p?
+\backslash
+notin P}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex OZzed
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $RPlace\sdef RPlace1\zor RPlace2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+RPlace
+\backslash
+sdef RPlace1
+\backslash
+zor RPlace2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Lemma
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Consistency lemma RPlace
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "lem:rplace"
+
+\end_inset
+
+
+\begin_inset Formula $\shows\Al{Board\zand RPlace}{Board'}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+The dashed components of the declaration satisfy the 
+\begin_inset Formula $Board$
+\end_inset
+
+ properties:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\dom C_{\_}'=\dom C_{\_}\setminus\SetD{p?}=P\setminus\SetD{p?}=P'$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Let 
+\begin_inset Formula $p,q\in\dom C_{\_}'\land p\neq q$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $C_{p}'\cap C_{q}'=C_{p}\cap C_{q}=\emptyset$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\bigcup_{p}C_{p}'=\left(\left(\bigcup_{p}C_{p}'\right)\cup C_{p?}\right)\setminus C_{p?}=C\setminus C_{p?}=C'$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex THOperation
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "operation:acounter"
+
+\end_inset
+
+Put a counter 
+\begin_inset Formula $c?$
+\end_inset
+
+ from the pool at a place 
+\begin_inset Formula $p?$
+\end_inset
+
+.
+ If the counter 
+\begin_inset Formula $c?$
+\end_inset
+
+ is already on the board or the place 
+\begin_inset Formula $p?$
+\end_inset
+
+ is not on the board then the operations skips.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex OZSchema
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+ACounter1
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Delta Counter$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Delta Counter
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Xi Place$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Xi Place
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Delta Dist$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Delta Dist
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $c?:\mbf C$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+c?:
+\backslash
+mbf C
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $p?:\mbf P$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+p?:
+\backslash
+mbf P
+\backslash
+ST
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $c?\notin C$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+c?
+\backslash
+notin C
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $p?\in P$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+p
+\backslash
+in P
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $C'=C\cup\SetD{c?}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+C'=C
+\backslash
+cup
+\backslash
+SetD{c?}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{\_}'=\SetD{p?\mapsto C_{p?}\cup\SetD{c?}}\fovr C_{\_}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+C_{
+\backslash
+_}'=
+\backslash
+SetD{p?
+\backslash
+mapsto C_{p?}
+\backslash
+cup
+\backslash
+SetD{c?}}
+\backslash
+fovr C_{
+\backslash
+_}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex OZzed
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Sdef{ACounter2}{\Xi Board;c?:\mbf C;p?:\mbf P}{c?\in C\lor p?\notin P}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sdef{ACounter2}{
+\backslash
+Xi Board;c?:
+\backslash
+mbf C;p?:
+\backslash
+mbf P}{c?
+\backslash
+in C
+\backslash
+lor p?
+\backslash
+notin P}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex OZzed
+status open
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $ACounter\sdef ACounter1\zor ACounter2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+ACounter
+\backslash
+sdef ACounter1
+\backslash
+zor ACounter2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Lemma
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Consistency lemma ACounter
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "lem:acounter"
+
+\end_inset
+
+
+\begin_inset Formula $\shows\Al{Board\zand ACounter}{Board'}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+The dashed components of the declaration satisfy the 
+\begin_inset Formula $Board$
+\end_inset
+
+ properties:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\dom C_{\_}'=\dom C_{\_}\cup\SetD{p?}=P=P'$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Let 
+\begin_inset Formula $p,q\in\dom C_{\_}'\land p\neq q\land q=\Mu{p:P}{c?\in C_{p}}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $C_{p}'\cap C_{q}'=C_{p}\cap\left(C_{q}\setminus\SetD{c?}\right)=\left(C_{p}\cap C_{q}\right)\setminus\SetD{c?}=\emptyset$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\bigcup_{p}C_{p}'=\left(\bigcup_{p\neq q}C_{p}'\right)\cup C_{q}'=\left(\bigcup_{p\neq q}C_{p}\right)\cup\left(C_{q}\setminus\SetD{c?}\right)=\left(\left(\bigcup_{p\neq q}C_{p}\right)\cup C_{q}\right)\setminus\left(\SetD{c?}\setminus\left(\bigcup_{p\neq q}C_{p}\right)\right)=C\setminus\SetD{c?}=C'$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex THOperation
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "operation:rcounter"
+
+\end_inset
+
+Removing a counter 
+\begin_inset Formula $c?$
+\end_inset
+
+ from the board also removes it from its place.
+ If the counter 
+\begin_inset Formula $c?$
+\end_inset
+
+ is not on the board then the operations skips.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex OZSchema
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+RCounter
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Delta Counter$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Delta Counter
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Xi Place$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Xi Place
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Delta Dist$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Delta Dist
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $c?:\mbf C$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+c?:
+\backslash
+mbf C
+\backslash
+ST
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $c?\in C$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+c?
+\backslash
+in C
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $C'=C\setminus\SetD{c?}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+C'=C
+\backslash
+setminus
+\backslash
+SetD{c?}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{\_}'=\SetD{\Mu{p:P}{c?\in C_{p}}\mapsto C_{p}\setminus\SetD{c?}}\fovr C_{\_}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+C_{
+\backslash
+_}'=
+\backslash
+SetD{
+\backslash
+Mu{p:P}{c?
+\backslash
+in C_{p}}
+\backslash
+mapsto C_{p}
+\backslash
+setminus
+\backslash
+SetD{c?}}
+\backslash
+fovr C_{
+\backslash
+_}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex OZzed
+status open
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Sdef{RCounter2}{\Xi Board;c?:\mbf C}{c?\notin C}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sdef{RCounter2}{
+\backslash
+Xi Board;c?:
+\backslash
+mbf C}{c?
+\backslash
+notin C}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex OZzed
+status open
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $RCounter\sdef RCounter1\zor RCounter2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+RCounter
+\backslash
+sdef RCounter1
+\backslash
+zor RCounter2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Lemma
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Consistency lemma RCounter
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "lem:rcounter"
+
+\end_inset
+
+
+\begin_inset Formula $\shows\Al{Board\zand RCounter}{Board'}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cref{lem:rcounter}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+The dashed components of the declaration satisfy the 
+\begin_inset Formula $Board$
+\end_inset
+
+ properties:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\dom C_{\_}'=\dom C_{\_}\cup\SetD{\Mu{p:P}{c?\in C_{p}}}=P=P'$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Let 
+\begin_inset Formula $p,q\in\dom C_{\_}'\land p\neq q\land q=\Mu{p:P}{c?\in C_{p}}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $C_{p}'\cap C_{q}'=C_{p}\cap\left(C_{q}\setminus\SetD{c?}\right)=\left(C_{p}\cap C_{q}\right)\setminus\SetD{c?}=\emptyset$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\bigcup_{p}C_{p}'=\left(\bigcup_{p\neq q}C_{p}'\right)\cup C_{q}'=\left(\bigcup_{p\neq q}C_{p}\right)\cup\left(C_{q}\setminus\SetD{c?}\right)=\left(\left(\bigcup_{p\neq q}C_{p}\right)\cup C_{q}\right)\setminus\left(\SetD{c?}\setminus\left(\bigcup_{p\neq q}C_{p}\right)\right)=C\setminus\SetD{c?}=C'$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset CommandInset label
+LatexCommand label
+name "proof:aplace"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cref{lem:aplace}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Flex Bussproof
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+AxiomC{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\assume{Board\zand Aplace1}1$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+noLine
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+UnaryInfC{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\assume{p\in\mbf P\land c\subseteq\mbf C\land d\subseteq\mbf C}2$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+noLine
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+UnaryInfC{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\assume{\left(p,c\right)\in C_{\_}'\land\left(p,d\right)\in C_{\_}'}3$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+noLine
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+UnaryInfC{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $ $
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+LeftSubproofLabel{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $B1$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Flex Bussproof
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+AxiomC{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $B1$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+UnaryInfC{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $p\in\dom C_{\_}'$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+UnaryInfC{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $p\in\dom\left(C_{\_}\cup\SetD{p?\mapsto\emptyset}\right)$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+UnaryInfC{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $p\in\dom C_{\_}\cup\dom\SetD{p?\mapsto\emptyset}$
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+UnaryInfC{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $p\in\dom C_{\_}\lor p\in\dom\SetD{p?\mapsto\emptyset}$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+UnaryInfC{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $p\in\dom C_{\_}\lor p=p?$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+AxiomC{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $B1$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+noLine
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+UnaryInfC{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\assume{p\in\dom C_{\_}}4$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+UnaryInfC{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $c=d$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+AxiomC{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $B1$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+noLine
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+UnaryInfC{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\assume{p=p?}4$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+UnaryInfC{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $c=\emptyset\land d=\emptyset$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+UnaryInfC{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $c=d$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+RightLabel{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\lor-,4$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+TrinaryInfC{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $c=d$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+RightLabel{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\implies+,3$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+UnaryInfC{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $p\in\mbf P\land c,d\subseteq\mbf C\land\left(p,c\right),\left(p,d\right)\in C_{\_}'\implies c=d$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+RightLabel{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\forall+,2$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+UnaryInfC{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $C_{\_}'\in\mbf P\pfun\power\mbf C$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+RightLabel{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\forall+,1$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+UnaryInfC{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\Al{Board\zand APlace1}{C_{\_}'\in\mbf P\pfun\power\mbf C}$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Flex Bussproof
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+AxiomC{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\assume{Board\zand Aplace1}1$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+UnaryInfC{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\dom C_{\_}'=\dom\left(C_{\_}\cup\SetD{p?\mapsto\emptyset}\right)$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+UnaryInfC{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\dom C_{\_}'=\dom C_{\_}\cup\dom\SetD{p?\mapsto\emptyset}$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+UnaryInfC{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\dom C_{\_}'=P\cup\SetD{p?}$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+UnaryInfC{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\dom C_{\_}'=P'$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+RightLabel{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\forall+,1$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+UnaryInfC{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\Al{Board\zand APlace1}{\dom C_{\_}'=P'}$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Flex Bussproof
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+AxiomC{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\assume{Board\zand Aplace1}1$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+noLine
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+UnaryInfC{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $p\in\dom C_{\_}'\land q\in\dom C_{\_}'$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+UnaryInfC{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $p\in\dom C_{\_}\cup\dom\SetD{p?\mapsto\emptyset}\land q\in\dom C_{\_}\cup\dom\SetD{p?\mapsto\emptyset}$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+UnaryInfC{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\left(p\in\dom C_{\_}\lor p=p?\right)\land\left(q\in\dom C_{\_}\lor q=p?\right)$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+UnaryInfC{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\text{\left(p\in\dom C_{\_}\land q\in\dom C_{\_}\right)}\lor\left(p=p?\lor q=p?\right)$
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+RightLabel{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $Case\,analysis$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+UnaryInfC{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $C_{p}'\cap C_{q}'=\emptyset$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Flex Bussproof
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+AxiomC{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\assume{Board\zand Aplace1}1$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+noLine
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+UnaryInfC{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\bigcup_{p}C_{p}'=\bigcup_{p}\left(C_{\_}\cup\SetD{p?\mapsto\emptyset}\right)_{p}$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+UnaryInfC{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\bigcup_{p}C_{p}'=\bigcup_{p}C_{p}\cup\emptyset$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+UnaryInfC{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\bigcup_{p}C_{p}'=C$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+UnaryInfC{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\bigcup_{p}C_{p}'=C'$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Counters have defining features that make it possible to know the roles
+ they fulfill in the game and that catogorize them in a sensible way understood
+ by (players of) the game.
+ The set of features that are defining for the category to which counters
+ can belong is 
+\begin_inset Formula $F$
+\end_inset
+
+ and is introduced as a basic type:
+\end_layout
+
+\begin_layout Standard
+The categorizing function 
+\begin_inset Formula $c:\nat\finj F$
+\end_inset
+
+, a partial finite injection, assigns to a finite set of numbers the features
+ that define the category to which a conter belongs.
+ We may ask for 
+\begin_inset Formula $c$
+\end_inset
+
+ to be normalized in the sense that there is a number 
+\begin_inset Formula $N:\nat$
+\end_inset
+
+ such that 
+\begin_inset Formula $\dom c=0\upto N-1$
+\end_inset
+
+.
+ This is axiomatically defined:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex THaxiom
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "axiom:category-function"
+
+\end_inset
+
+The category function c and the number of categories 
+\begin_inset Formula $C$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex OZaxdef
+status open
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $c:\nat\finj F$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+c:
+\backslash
+nat
+\backslash
+finj F
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $C:\nat$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+C:
+\backslash
+nat
+\backslash
+ST
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Ex{N:\nat}{\dom c=0\upto N-1\land C=N}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Ex{N:
+\backslash
+nat}{
+\backslash
+dom c=0
+\backslash
+upto N-1
+\backslash
+land C=N}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Remark*
+If 
+\begin_inset Formula $F=\ran c$
+\end_inset
+
+ then 
+\begin_inset Formula $c$
+\end_inset
+
+ is also a bijection.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset CommandInset label
+LatexCommand label
+name "exa:playing-card"
+
+\end_inset
+
+In some playing card game 
+\begin_inset Formula $G$
+\end_inset
+
+ that has to be played with one standard deck, i.e.
+ a deck of cards of which every card (counter) has one the of four suits
+ ♦, ♥, ♠ or ♣, and one of the thirteen ranks Ace, 2, 3, 4, 5, 6, 7, 8 ,
+ 9, 10, Jack, Queen or King.
+ If the four suits are represented by the four numbers 
+\begin_inset Formula $0\upto3$
+\end_inset
+
+ and the thirteen ranks by the thirteen numbers 
+\begin_inset Formula $0\upto12$
+\end_inset
+
+, then the defining feature set is 
+\begin_inset Formula $F=0\upto3\cross0\upto12$
+\end_inset
+
+.
+ This means that there are 
+\begin_inset Formula $4\times13=52$
+\end_inset
+
+ different kinds of cards with which we can play the card game 
+\begin_inset Formula $G$
+\end_inset
+
+.
+ The function 
+\begin_inset Formula $c:0\upto51\,\bij\,0\upto3\cross0\upto12$
+\end_inset
+
+ that is defined by 
+\begin_inset Formula $c\,i=\left(i\div13,i\mod13\right),\,i\in0\upto51$
+\end_inset
+
+ maps the number 
+\begin_inset Formula $i$
+\end_inset
+
+ to a defining suit and rank in a one-to-one way.
+ 
+\begin_inset Formula $c$
+\end_inset
+
+ together with the number 
+\begin_inset Formula $C=52$
+\end_inset
+
+ satisfy 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cref{axiom:category-function}
+\end_layout
+
+\end_inset
+
+.
+ Notice that in this case 
+\begin_inset Formula $c$
+\end_inset
+
+ is a bijection.
+ 
+\end_layout
+
+\begin_layout Example
+A game like 
+\emph on
+Canasta
+\emph default
+ needs two standard decks of cards to which two Jokers have been added,
+ so there are 
+\begin_inset Formula $53$
+\end_inset
+
+ categories, i.e.
+ categories 
+\begin_inset Formula $0\upto51$
+\end_inset
+
+ for the standard cards and the category 
+\begin_inset Formula $52$
+\end_inset
+
+ for Jokers.
+ To fit the Joker to the suit-rank feature system, we can say that a Joker's
+ rank is 
+\begin_inset Formula $13$
+\end_inset
+
+ while its suit is undetermined and considered unimportant.
+ Thus the category function becomes 
+\begin_inset Formula $c:0\upto52\,\finj\,0\upto3\cross0\upto13$
+\end_inset
+
+ defined by 
+\begin_inset Formula $c\,i=\begin{cases}
+\left(i\div13,i\mod13\right) & i\in0\upto51\\
+\left(0,13\right) & i=52
+\end{cases}$
+\end_inset
+
+.
+ Notice that in this case 
+\begin_inset Formula $c$
+\end_inset
+
+ is not bijective.
+\end_layout
+
+\begin_layout Description
+ACard The abstract playing card.
+ An (object of type) 
+\series bold
+ACard
+\series default
+ knows about its 
+\emph on
+suit
+\emph default
+ and 
+\emph on
+rank
+\emph default
+, i.e.
+ its 
+\emph on
+index
+\emph default
+, and whether or not it is 
+\emph on
+faceup
+\emph default
+ or 
+\emph on
+facedown
+\emph default
+.
+ 
+\series bold
+ACard
+\series default
+s also have a reference to the 
+\series bold
+AHand
+\series default
+ that holds them.
+\end_layout
+
+\begin_layout Description
+CCard The concrete playing card.
+ A 
+\series bold
+CCard
+\series default
+ represents a 
+\emph on
+real-world
+\emph default
+ card in the sense that it holds real-world characteristics of a playing
+ card, like position on the table, faceup image and facedown image etc.
+ 
+\series bold
+CCard
+\series default
+s also have a reference to the 
+\series bold
+CHand
+\series default
+ that holds them.
+\end_layout
+
+\begin_layout Description
+AHand The abstract hand.
+ The 
+\series bold
+AHand
+\series default
+ is a sequential container of references to 
+\series bold
+ACard
+\series default
+s.
+ 
+\series bold
+AHand
+\series default
+s also have a reference to the 
+\series bold
+AGame
+\series default
+ to which they are assigned.
+\end_layout
+
+\begin_layout Description
+CHand The concrete hand.
+ The 
+\series bold
+CHand
+\series default
+ is a sequential container of references to 
+\series bold
+CCard
+\series default
+s.
+ Like a 
+\series bold
+CCard
+\series default
+, they represent a real-world hand of cards and therefore hold the real-world
+ characteristics of a hand of cards.
+ 
+\series bold
+CHand
+\series default
+s also have a reference to the 
+\series bold
+CGame
+\series default
+ to which they are assigned.
+\end_layout
+
+\begin_layout Subsection
+A Mediator.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+The injections.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex OZsidebyside
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex OZSchema
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+InAC
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $accc:ACard\pinj CCard$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+accc:ACard
+\backslash
+pinj CCard
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $ahch:AHand\pinj CHand$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+ahch:AHand
+\backslash
+pinj CHand
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+nextside
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex OZSchema
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+InAC
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $accc:ACard\pinj CCard$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+accc:ACard
+\backslash
+pinj CCard
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $ahch:AHand\pinj CHand$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+ahch:AHand
+\backslash
+pinj CHand
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex THschema
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "schema:InAC"
+
+\end_inset
+
+This schema gives the partial injections 
+\begin_inset Formula $accc$
+\end_inset
+
+ and 
+\begin_inset Formula $ahch$
+\end_inset
+
+ that resp.
+ map an 
+\begin_inset Formula $ACard$
+\end_inset
+
+ to a unique 
+\begin_inset Formula $CCard$
+\end_inset
+
+ (and vice versa) and an 
+\begin_inset Formula $AHand$
+\end_inset
+
+ to a unique 
+\begin_inset Formula $CHand$
+\end_inset
+
+ (and vice versa).
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex OZSchema
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+InAC
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $accc:ACard\pinj CCard$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+accc:ACard
+\backslash
+pinj CCard
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $ahch:AHand\pinj CHand$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+ahch:AHand
+\backslash
+pinj CHand
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+The abstract game.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex THschema
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "schema:AGame"
+
+\end_inset
+
+This is the schema that specifies the abstract game, i.e.
+ a collection of abstract hands (and cards).
+ The hands 
+\begin_inset Formula $aCentral$
+\end_inset
+
+ and 
+\begin_inset Formula $aDiscard$
+\end_inset
+
+ are present in every 
+\begin_inset Formula $AGame$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex OZSchema
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+AGame
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $aCentral,aDiscard:AHand$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+aCentral,aDiscard:AHand
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $aHand:\iseq AHand$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+aHand:
+\backslash
+iseq AHand
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Initially the injective sequence over objects of 
+\begin_inset Formula $AHand$
+\end_inset
+
+ is an empty sequence.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex OZSchema
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+InitAGame
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $AGame$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+AGame
+\backslash
+ST
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $aHand=\emptyseq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+aHand=
+\backslash
+emptyseq
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+The concrete game.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex THschema
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "schema:CGame"
+
+\end_inset
+
+This is the schema that specifies the concrete game, i.e.
+ a collection of concrete hands (and cards).
+ The hands 
+\begin_inset Formula $cCentral$
+\end_inset
+
+ and 
+\begin_inset Formula $cDiscard$
+\end_inset
+
+ are present in every 
+\begin_inset Formula $CGame$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex OZSchema
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+CGame
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $cCentral,cDiscard:CHand$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+cCentral,cDiscard:CHand
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $cHand:\iseq CHand$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+cHand:
+\backslash
+iseq CHand
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Initially the injective sequence over objects of 
+\begin_inset Formula $AHand$
+\end_inset
+
+ is an empty sequence.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex OZSchema
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+InitCGame
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $CGame$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+CGame
+\backslash
+ST
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $cHand=\emptyseq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+cHand=
+\backslash
+emptyseq
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+The mediator.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex THschema
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "schema:Mediator"
+
+\end_inset
+
+The schema 
+\begin_inset Formula $Mediator$
+\end_inset
+
+ combines the schemas 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cref{schema:BijAC,schema:AGame,schema:CGame}
+\end_layout
+
+\end_inset
+
+ that specifies the concrete game, i.e.
+ a collection of concrete hands (and cards).
+ The hands 
+\begin_inset Formula $cCentral$
+\end_inset
+
+ and 
+\begin_inset Formula $cDiscard$
+\end_inset
+
+ are present in every 
+\begin_inset Formula $CGame$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex OZSchema
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Mediator
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $BijAC$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+BijAC
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $AGame$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+AGame
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $CGame$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+CGame
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Initially the injective sequence over objects of 
+\begin_inset Formula $AHand$
+\end_inset
+
+ is an empty sequence.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex OZSchema
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+InitMediator
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $Mediator$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Mediator
+\backslash
+ST
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $InitAGame$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+InitAGame
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $InitCGame$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+InitCGame
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $accc=\emptyset$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+accc=
+\backslash
+emptyset
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $ahch=\SetD{aCentral\mapsto cCentral,aDiscard\mapsto cDiscard}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+ahch=
+\backslash
+SetD{aCentral
+\backslash
+mapsto cCentral,aDiscard
+\backslash
+mapsto cDiscard}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Abstract cards and hands.
+\end_layout
+
+\begin_layout Subsubsection
+The abstract card.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex THclass
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "class:ACard"
+
+\end_inset
+
+The class 
+\begin_inset Formula $ACard$
+\end_inset
+
+ represents an abstract playing card, which could be seen as an element
+ of 
+\begin_inset Formula $\bool\cross\nat\cross0\upto R-1$
+\end_inset
+
+, where 
+\begin_inset Formula $R\in\natone$
+\end_inset
+
+ is the number of ranks that such a card can have .
+ A standard playing card is said to have a .
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex OZclass
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+ACard
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\VisList{index,rank,suit,faceup}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+VisList{index,rank,suit,faceup}
+\backslash
+Also
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex OZaxdef
+status open
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $S,R:\natone\comment{Number\,of\,suits\,and\,ranks}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+S,R:
+\backslash
+natone
+\backslash
+comment{Number
+\backslash
+,of
+\backslash
+,suits
+\backslash
+,and
+\backslash
+,ranks}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex OZstate
+status open
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $index:\nat$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+index:
+\backslash
+nat
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $faceup:\bool$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+faceup:
+\backslash
+bool
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $hand:AHand$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+hand:AHand
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Delta$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Delta
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $rank,suit:\nat$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+rank,suit:
+\backslash
+nat
+\backslash
+ST
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $rank=index\mod R$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+rank=index
+\backslash
+mod R
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $suit=index\div R$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+suit=index
+\backslash
+div R
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex OZinit
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $faceup\land index\in0\upto S\cdot R-1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+faceup
+\backslash
+land index
+\backslash
+in0
+\backslash
+upto S
+\backslash
+cdot R-1
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $hand\in\dom\theta Mediator.ahch$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+hand
+\backslash
+in
+\backslash
+dom
+\backslash
+theta Mediator.ahch
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Sdef{flip}{\Delta\left(faceup\right)}{faceup'\iff\neg faceup}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Also
+\backslash
+Sdef{flip}{
+\backslash
+Delta
+\backslash
+left(faceup
+\backslash
+right)}{faceup'
+\backslash
+iff
+\backslash
+neg faceup}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Sdef{face}{\Delta\left(faceup\right);faceup?:\bool}{faceup'\iff faceup?}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Also
+\backslash
+Sdef{face}{
+\backslash
+Delta
+\backslash
+left(faceup
+\backslash
+right);faceup?:
+\backslash
+bool}{faceup'
+\backslash
+iff faceup?}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+The abstract hand.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex THclass
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "class:AHand"
+
+\end_inset
+
+The class 
+\begin_inset Formula $AHand$
+\end_inset
+
+ represents an abstract hand of abstract cards.
+ An object of this class is essentially an element of 
+\begin_inset Formula $\iseq ACard$
+\end_inset
+
+, i.e.
+ an injective sequence of abstract cards.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex OZclass
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+AHand
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\VisList{card,size}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+VisList{card,size}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Also
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex OZstate
+status open
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $Id:String$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Id:String
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $card:\iseq ACard$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+card:
+\backslash
+iseq ACard
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Delta$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Delta
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $size:\nat$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+size:
+\backslash
+nat
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $empty:\bool$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+empty:
+\backslash
+bool
+\backslash
+ST
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $size=\#card$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+size=
+\backslash
+#card
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $empty\iff size=0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+empty
+\backslash
+iff size=0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex OZinit
+status open
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $card=\emptyseq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+card=
+\backslash
+emptyseq
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Concrete cards and hands.
+\end_layout
+
+\begin_layout Subsubsection
+The concrete card.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex THclass
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "class:CCard"
+
+\end_inset
+
+The class 
+\begin_inset Formula $CCard$
+\end_inset
+
+ represents a concrete playing card, which is the view of an abstract playing
+ card in a user interface system, where cards have, e.g, images and positions
+ relative to another position, etc..
+ 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex OZclass
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+CCard
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\VisList{xyz,im,pos,z,index,rank,suit,faceup}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+VisList{xyz,im,pos,z,index,rank,suit,faceup}
+\backslash
+Also
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left[CImage\right]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+left[CImage
+\backslash
+right]
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex OZaxdef
+status open
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $fuim:0\upto S\cdot R-1\fun CImage$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+fuim:0
+\backslash
+upto S
+\backslash
+cdot R-1
+\backslash
+fun CImage
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $fdim:0\upto S\cdot R-1\fun CImage$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+fdim:0
+\backslash
+upto S
+\backslash
+cdot R-1
+\backslash
+fun CImage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex OZstate
+status open
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $xyz:\real^{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+xyz:
+\backslash
+real^{3}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $hand:CHand$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $im:CImage$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+im:CImage
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Delta$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Delta
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $pos:\real^{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+pos:
+\backslash
+real^{2}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $z:\real$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+z:
+\backslash
+real
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $index,rank,suit:\nat$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+index,rank,suit:
+\backslash
+nat
+\backslash
+ST
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $im=\IfThenElse{faceup}{fuim\,index}{fdim\,index}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+im=
+\backslash
+IfThenElse{faceup}{fuim
+\backslash
+,index}{fdim
+\backslash
+,index}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $pos=\left(xyz.1,xyz.2\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+pos=
+\backslash
+left(xyz.1,xyz.2
+\backslash
+right)
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $z=xyz.3$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+z=xyz.3
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $index=\left(\theta Mediator.accc\inv\,self\right).index$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+index=
+\backslash
+left(
+\backslash
+theta Mediator.accc
+\backslash
+inv
+\backslash
+,self
+\backslash
+right).index
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $rank=\left(\theta Mediator.accc\inv\,self\right).rank$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+rank=
+\backslash
+left(
+\backslash
+theta Mediator.accc
+\backslash
+inv
+\backslash
+,self
+\backslash
+right).rank
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $suit=\left(\theta Mediator.accc\inv\,self\right).suit$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+suit=
+\backslash
+left(
+\backslash
+theta Mediator.accc
+\backslash
+inv
+\backslash
+,self
+\backslash
+right).suit
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $faceup=\left(\theta Mediator.accc\inv\,self\right).faceup$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+faceup=
+\backslash
+left(
+\backslash
+theta Mediator.accc
+\backslash
+inv
+\backslash
+,self
+\backslash
+right).faceup
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex OZinit
+status open
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $xyz=\left(0,0,hand.size\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+xyz=
+\backslash
+left(0,0,hand.size
+\backslash
+right)
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $hand\in\dom\theta Mediator.ahch\inv$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Also hand
+\backslash
+in
+\backslash
+dom
+\backslash
+theta Mediator.ahch
+\backslash
+inv
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $self=\theta Mediator.$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+The concrete hand.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex THclass
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "class:CHand"
+
+\end_inset
+
+The class 
+\begin_inset Formula $CHand$
+\end_inset
+
+ represents a concrete hand of concrete cards.
+ An object of this class is essentially an element of 
+\begin_inset Formula $\iseq CCard_{\copyright}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex OZclass
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+CHand
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\VisList{card,size}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+VisList{card,size}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Also
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left[Image\right]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+left[HImage
+\backslash
+right]
+\backslash
+Also
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex OZaxdef
+status open
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $fuim:0\upto S\cdot R-1\fun HImage$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+fuim:0
+\backslash
+upto S
+\backslash
+cdot R-1
+\backslash
+fun HImage
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $fdim:0\upto S\cdot R-1\fun HImage$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+fdim:0
+\backslash
+upto S
+\backslash
+cdot R-1
+\backslash
+fun HImage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex OZstate
+status open
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $card:\iseq CCard_{\copyright}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+card:
+\backslash
+iseq CCard_{
+\backslash
+copyright}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $xyz:\real^{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+xyz:
+\backslash
+real^{3}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $im:HImage$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+im:HImage
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Delta$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Delta
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $size:\nat$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+size:
+\backslash
+nat
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $empty:\bool$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+empty:
+\backslash
+bool
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $pos:\real^{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+pos:
+\backslash
+real^{2}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $z:\real$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+z:
+\backslash
+real
+\backslash
+ST
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $size=\#card$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+size=
+\backslash
+#card
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $empty\iff size=0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+empty
+\backslash
+iff size=0
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $pos=\left(xyz.1,xyz.2\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+pos=
+\backslash
+left(xyz.1,xyz.2
+\backslash
+right)
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $z=xyz.3$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+z=xyz.3
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex OZinit
+status open
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $card=\emptyseq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+card=
+\backslash
+emptyseq
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Constant Operations
+\end_layout
+
+\begin_layout Standard
+The number of hands in the game.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex THCoperation
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "op:gamehandsize"
+
+\end_inset
+
+The number of hands currently present in the game, not counting 
+\begin_inset Formula $aCentral$
+\end_inset
+
+ and 
+\begin_inset Formula $aDiscard$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex OZzed
+status open
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Sdef{GameHandSize}{AGame;ghsize!:\nat}{ghsize!=\#aHand}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sdef{GameHandSize}{AGame;ghsize!:
+\backslash
+nat}{ghsize!=
+\backslash
+#aHand}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Test whether there are no hands present besides 
+\begin_inset Formula $aCentral$
+\end_inset
+
+ and 
+\begin_inset Formula $aDiscard$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex OZzed
+status open
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Sdef{GameHandEmpty}{AGame;ghempty!:\bool}{ghempty!\iff aHand=\emptyseq}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sdef{GameHandEmpty}{AGame;ghempty!:
+\backslash
+bool}{ghempty!
+\backslash
+iff aHand=
+\backslash
+emptyseq}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The number of cards in the game.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex THCoperation
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "op:gamecardsize"
+
+\end_inset
+
+The total number of cards presently in the game.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex OZzed
+status open
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Sdef{GameCardSize}{BijAC;gcsize!:\nat}{gcsize!=\#accc}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sdef{GameCardSize}{BijAC;gcsize!:
+\backslash
+nat}{gcsize!=
+\backslash
+#accc}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Operations
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex THOperation
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "op:addnewhand"
+
+\end_inset
+
+This operation adds a new abstract hand to the game 
+\begin_inset Formula $AGame$
+\end_inset
+
+.
+ The operations involved are threefold:
+\end_layout
+
+\begin_layout Enumerate
+Test whether the new hand 
+\begin_inset Formula $ahand$
+\end_inset
+
+ is not a member of the already registered hands, i.e.
+ 
+\begin_inset Formula $ahand\notin\dom ahch$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Then, if not, construct a new concrete hand 
+\begin_inset Formula $chand$
+\end_inset
+
+ and add the mapping 
+\begin_inset Formula $ahand\mapsto chand$
+\end_inset
+
+ to the partial injection 
+\begin_inset Formula $ahch$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Add 
+\begin_inset Formula $ahand$
+\end_inset
+
+ and 
+\begin_inset Formula $chand$
+\end_inset
+
+ to the end of resp.
+ 
+\begin_inset Formula $aHand$
+\end_inset
+
+ and 
+\begin_inset Formula $cHand$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex OZSchema
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+AddNewHand
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Delta Mediator$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Delta Mediator
+\backslash
+ST
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $accc'=accc$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+accc'=accc
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $(\mbf{let}\,ah\defs\left(\mu\,ahand:AHand_{\copyright}\right);ch\defs\left(\mu\,chand:CHand_{\copyright}\right)\,@$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+(
+\backslash
+mbf{let}
+\backslash
+,ah
+\backslash
+defs
+\backslash
+left(
+\backslash
+mu
+\backslash
+,ahand:AHand_{
+\backslash
+copyright}
+\backslash
+right);ch
+\backslash
+defs
+\backslash
+left(
+\backslash
+mu
+\backslash
+,chand:CHand_{
+\backslash
+copyright}
+\backslash
+right)
+\backslash
+,@
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\hphantom{(\mbf{let}\,}ahch'=ahch\cup\SetD{ah\mapsto ch}\,\land$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hphantom{(
+\backslash
+mbf{let}
+\backslash
+,}ahch'=ahch
+\backslash
+cup
+\backslash
+SetD{ah
+\backslash
+mapsto ch}
+\backslash
+,
+\backslash
+land
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\hphantom{\hphantom{(\mbf{let}\,}}aHand'=aHand\cat\left\langle ah\right\rangle \land cHand'=cHand\cat\left\langle ch\right\rangle )$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hphantom{
+\backslash
+hphantom{(
+\backslash
+mbf{let}
+\backslash
+,}}aHand'=aHand
+\backslash
+cat
+\backslash
+left
+\backslash
+langle ah
+\backslash
+right
+\backslash
+rangle 
+\backslash
+land cHand'=cHand
+\backslash
+cat
+\backslash
+left
+\backslash
+langle ch
+\backslash
+right
+\backslash
+rangle )
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+C++
+\end_layout
+
+\begin_layout Subsection
+The AGame and CGame.
+\end_layout
+
+\begin_layout Subsubsection
+The class frames.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+agame.h
+\end_layout
+
+\end_inset
+
+#ifndef AGAME_H
+\end_layout
+
+\begin_layout Plain Layout
+
+#define AGAME_H
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+<<AGame includes>>
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+namespace HOC
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+class AGame {
+\end_layout
+
+\begin_layout Plain Layout
+
+  <<AGame private>>
+\end_layout
+
+\begin_layout Plain Layout
+
+public:
+\end_layout
+
+\begin_layout Plain Layout
+
+  AGame();
+\end_layout
+
+\begin_layout Plain Layout
+
+ ~AGame(); 
+\end_layout
+
+\begin_layout Plain Layout
+
+  <<AGame public>>
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+<<AGame declarations>>
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#endif
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+agame.cpp
+\end_layout
+
+\end_inset
+
+#include 
+\begin_inset Quotes eld
+\end_inset
+
+agame.h
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+<<AGame definitions includes>>
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+<<AGame definitions>>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+AGame definitions
+\end_layout
+
+\end_inset
+
+// noop
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+AGame definitions includes
+\end_layout
+
+\end_inset
+
+// noop
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+cgame.h
+\end_layout
+
+\end_inset
+
+#ifndef CGAME_H
+\end_layout
+
+\begin_layout Plain Layout
+
+#define CGAME_H
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+<<CGame includes>>
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+namespace HOC {
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+class CGame {
+\end_layout
+
+\begin_layout Plain Layout
+
+  <<CGame private>>
+\end_layout
+
+\begin_layout Plain Layout
+
+public:
+\end_layout
+
+\begin_layout Plain Layout
+
+  CGame();
+\end_layout
+
+\begin_layout Plain Layout
+
+ ~CGame(); 
+\end_layout
+
+\begin_layout Plain Layout
+
+  <<CGame public>>
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+<<CGame declarations>>
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#endif
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+cgame.cpp
+\end_layout
+
+\end_inset
+
+#include 
+\begin_inset Quotes eld
+\end_inset
+
+CGame.h
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+<<CGame definitions includes>>
+\end_layout
+
+\begin_layout Plain Layout
+
+<<CGame definitions>>
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+CGame definitions
+\end_layout
+
+\end_inset
+
+// noop
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+CGame definitions includes
+\end_layout
+
+\end_inset
+
+// noop
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+CGame declarations
+\end_layout
+
+\end_inset
+
+// noop
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+AGame declarations
+\end_layout
+
+\end_inset
+
+// noop
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+The two standard hands.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+AGame includes
+\end_layout
+
+\end_inset
+
+#include 
+\begin_inset Quotes eld
+\end_inset
+
+ahand.h
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+AGame private
+\end_layout
+
+\end_inset
+
+AHand aCentral, aDiscard;
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+AGame public
+\end_layout
+
+\end_inset
+
+AHand*central() const {return &aCentral;}
+\end_layout
+
+\begin_layout Plain Layout
+
+AHand*discard() const {return &aDiscard;}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+CGame includes
+\end_layout
+
+\end_inset
+
+#include 
+\begin_inset Quotes eld
+\end_inset
+
+chand.h
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+CGame private
+\end_layout
+
+\end_inset
+
+CHand cCentral, cDiscard;
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+CGame public
+\end_layout
+
+\end_inset
+
+CHand*central() const {return &cCentral;}
+\end_layout
+
+\begin_layout Plain Layout
+
+CHand*discard() const {return &cDiscard;}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+The injective sequences 
+\begin_inset Formula $aHand$
+\end_inset
+
+ and 
+\begin_inset Formula $cHand$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+These are refined to 
+\family typewriter
+std::vector
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+AGame includes
+\end_layout
+
+\end_inset
+
+#include <vector>
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+AGame private
+\end_layout
+
+\end_inset
+
+typedef std::vector<AHand*> VAHand; 
+\end_layout
+
+\begin_layout Plain Layout
+
+VAHand aHand;
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+AGame public
+\end_layout
+
+\end_inset
+
+typedef VAHand::size_type size_type;
+\end_layout
+
+\begin_layout Plain Layout
+
+AHand*hand(size_type i) const {return aHand.at(i);}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+CGame includes
+\end_layout
+
+\end_inset
+
+#include <vector>
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+CGame private
+\end_layout
+
+\end_inset
+
+typedef std::vector<CHand*> VCHand; 
+\end_layout
+
+\begin_layout Plain Layout
+
+VCHand cHand;
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+CGame public
+\end_layout
+
+\end_inset
+
+typedef VCHand::size_type size_type;
+\end_layout
+
+\begin_layout Plain Layout
+
+CHand*hand(size_type i) const {return cHand.at(i);}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+The Mediator.
+\end_layout
+
+\begin_layout Subsubsection
+The class frame.
+\end_layout
+
+\begin_layout Standard
+The schema 
+\begin_inset Formula $Mediator$
+\end_inset
+
+ is implemented by the class 
+\family typewriter
+Mediator
+\family default
+ of which the frame is given:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+mediator.h
+\end_layout
+
+\end_inset
+
+#ifndef MEDIATOR_H
+\end_layout
+
+\begin_layout Plain Layout
+
+#define MEDIATOR_H
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+<<Mediator includes>>
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+namespace HOC
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+class Mediator {
+\end_layout
+
+\begin_layout Plain Layout
+
+  <<Mediator private>>
+\end_layout
+
+\begin_layout Plain Layout
+
+public:
+\end_layout
+
+\begin_layout Plain Layout
+
+  Mediator();
+\end_layout
+
+\begin_layout Plain Layout
+
+ ~Mediator(); 
+\end_layout
+
+\begin_layout Plain Layout
+
+  <<Mediator public>>
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+<<Mediator declarations>>
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#endif
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Chunk
+status collapsed
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+mediator.cpp
+\end_layout
+
+\end_inset
+
+#include 
+\begin_inset Quotes eld
+\end_inset
+
+mediator.h
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+using namespace HOC;
+\end_layout
+
+\begin_layout Plain Layout
+
+<<Mediator definitions>>
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+Mediator definitions
+\end_layout
+
+\end_inset
+
+// noop
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+Mediator declarations
+\end_layout
+
+\end_inset
+
+// noop
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+Mediator public
+\end_layout
+
+\end_inset
+
+// noop
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+The schema 
+\begin_inset Formula $InAC$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The two injections 
+\begin_inset Formula $accc$
+\end_inset
+
+ and 
+\begin_inset Formula $ahch$
+\end_inset
+
+ are implemented with the Boost.Bimap
+\begin_inset CommandInset citation
+LatexCommand cite
+key "BibEntry2020Dec"
+literal "true"
+
+\end_inset
+
+ library: a bidirectional maps library for C++
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.boost.org/doc/libs/1_71_0/libs/bimap/doc/html/index.html
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename boost.bimap.logo.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Boost.Bimap Logo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Chunk
+status collapsed
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+Mediator includes
+\end_layout
+
+\end_inset
+
+#include <boost/bimap.hpp>
+\end_layout
+
+\begin_layout Plain Layout
+
+class ACard;
+\end_layout
+
+\begin_layout Plain Layout
+
+class CCard;
+\end_layout
+
+\begin_layout Plain Layout
+
+class AHand;
+\end_layout
+
+\begin_layout Plain Layout
+
+class CHand;
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+Mediator private
+\end_layout
+
+\end_inset
+
+typedef boost::bimap<ACard*,CCard*> ACCC;
+\end_layout
+
+\begin_layout Plain Layout
+
+typedef boost::bimap<AHand*,CHand*> AHCH;
+\end_layout
+
+\begin_layout Plain Layout
+
+ACCC accc; // ACard <--> CCard
+\end_layout
+
+\begin_layout Plain Layout
+
+AHCH ahch; // AHand <--> CHand
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\start_of_appendix
+The BUILD-SCRIPT
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+
+build-script
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#!/bin/sh
+\end_layout
+
+\begin_layout Plain Layout
+
+#if [ -z "${NOWEB_SOURCE}" ]then
+\end_layout
+
+\begin_layout Plain Layout
+
+#NOWEB_SOURCE=myfile.nw
+\end_layout
+
+\begin_layout Plain Layout
+
+#fi
+\end_layout
+
+\begin_layout Plain Layout
+
+notangle -Ragame.h ${NOWEB_SOURCE} > ~/Documents/HOC/Program/agame.h
+\end_layout
+
+\begin_layout Plain Layout
+
+notangle -Ragame.cpp ${NOWEB_SOURCE} > ~/Documents/HOC/Program/agame.cpp
+\end_layout
+
+\begin_layout Plain Layout
+
+notangle -Rcgame.h ${NOWEB_SOURCE} > ~/Documents/HOC/Program/cgame.h
+\end_layout
+
+\begin_layout Plain Layout
+
+notangle -Rcgame.cpp ${NOWEB_SOURCE} > ~/Documents/HOC/Program/cgame.cpp
+\end_layout
+
+\begin_layout Plain Layout
+
+notangle -Rmediator.h ${NOWEB_SOURCE} > ~/Documents/HOC/Program/mediator.h
+\end_layout
+
+\begin_layout Plain Layout
+
+notangle -Rmediator.cpp ${NOWEB_SOURCE} > ~/Documents/HOC/Program/mediator.cpp
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "/home/amedeo/Books/BibTex/ZNotation,/home/amedeo/Books/BibTex/Programming,/home/amedeo/Books/BibTex/RulesOfGames,/home/amedeo/Books/BibTex/Dictionaries"
+options "plain"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
