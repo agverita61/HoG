@@ -150,7 +150,7 @@ status open
 
 
 \backslash
-ac{HoC}
+ac{HoG}
 \end_layout
 
 \end_inset
@@ -170,6 +170,7 @@ ac{OZ}
 
 \end_inset
 
+.
  
 \end_layout
 
@@ -876,14 +877,194 @@ comment{3}
  
 \end_layout
 
+\begin_layout Lemma
+\begin_inset CommandInset label
+LatexCommand label
+name "lem:mu-lemma"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mu$
+\end_inset
+
+-lemma
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\shows\Al{Board}{\Al{c:C}{\Exione{p:\mbf P}{p\in P}{c\in C_{p}}}}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Therefore the 
+\begin_inset Formula $\mu$
+\end_inset
+
+-expression 
+\begin_inset Formula $\Muu{p:\mbf P}{p\in P}{c\in C_{p}}$
+\end_inset
+
+ is proper for given 
+\begin_inset Formula $C\subseteq\mbf C$
+\end_inset
+
+, 
+\begin_inset Formula $c\in C$
+\end_inset
+
+ and 
+\begin_inset Formula $C_{\_}\in\mbf P\pfun\power\mbf C$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Proof
+This lemma is a direct consequence of the partitioning of 
+\begin_inset Formula $C$
+\end_inset
+
+ by the family of subsets 
+\begin_inset Formula $\Fama Cp$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Flex Bussproof
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+def
+\backslash
+fCenter{
+\backslash
+ 
+\backslash
+shows
+\backslash
+ }
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Axiom
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $Board,c\in C\fCenter\Exi{p:\mbf P}{p\in P}{\overset{\underline{c\in\bigcup_{p}C_{p}}}{c\in C_{p}}\land\All{q:\mbf P}{q\in P\land c\in C_{q}}{\overset{\underline{C_{p}C_{q}=\emptyset}}{p=q}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+UnaryInf
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $Board,c\in C\fCenter\Exione{p:\mbf P}{p\in P}{c\in C_{p}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+UnaryInf
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $Board\fCenter\Al{c:C}{\Exione{p:\mbf P}{p\in P}{c\in C_{p}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+UnaryInf
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\fCenter\Al{Board}{\Al{c:C}{\Exione{p:\mbf P}{p\in P}{c\in C_{p}}}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Building a board.
 \end_layout
 
 \begin_layout Standard
 There are four operations to build a board, i.e.
- adding and removing places and counters, resp.
+ adding and removing-one at a time-places and counters, resp.
  from and to their respective pools.
+\end_layout
+
+\begin_layout Subsubsection
+Adding/Removing a place.
 \end_layout
 
 \begin_layout Standard
@@ -1170,7 +1351,7 @@ emptyset}
 
 \begin_layout Plain Layout
 \begin_inset Flex OZzed
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Note Note
@@ -1214,7 +1395,7 @@ in P}
 
 \begin_layout Plain Layout
 \begin_inset Flex OZzed
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Note Note
@@ -1328,7 +1509,7 @@ Let
 
 \begin_layout Standard
 \begin_inset Flex THOperation
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset CommandInset label
@@ -1770,6 +1951,10 @@ Let
 
 \end_layout
 
+\begin_layout Subsubsection
+Adding/Removing a counter.
+\end_layout
+
 \begin_layout Standard
 \begin_inset Flex THOperation
 status open
@@ -2064,7 +2249,7 @@ SetD{c?}
 status open
 
 \begin_layout Plain Layout
-\begin_inset Formula $C_{\_}'=\SetD{p?\mapsto C_{p?}\cup\SetD{c?}}\fovr C_{\_}$
+\begin_inset Formula $C_{\_}'=C_{\_}\fovr\SetD{p?\mapsto C_{p?}\cup\SetD{c?}}$
 \end_inset
 
 
@@ -2080,7 +2265,11 @@ status open
 
 C_{
 \backslash
-_}'=
+_}'=C_{
+\backslash
+_}
+\backslash
+fovr
 \backslash
 SetD{p?
 \backslash
@@ -2089,10 +2278,6 @@ mapsto C_{p?}
 cup
 \backslash
 SetD{c?}}
-\backslash
-fovr C_{
-\backslash
-_}
 \end_layout
 
 \end_inset
@@ -2262,7 +2447,7 @@ Let
 
 \begin_layout Standard
 \begin_inset Flex THOperation
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset CommandInset label
@@ -2486,7 +2671,7 @@ SetD{c?}
 status open
 
 \begin_layout Plain Layout
-\begin_inset Formula $C_{\_}'=\SetD{\Mu{p:P}{c?\in C_{p}}\mapsto C_{p}\setminus\SetD{c?}}\fovr C_{\_}$
+\begin_inset Formula $C_{\_}'=\left(\mbf{let}\,p\defs\Muu{p:\mbf P}{p\in P}{c?\in C_{p}}@C_{\_}\fovr\SetD{p\mapsto C_{p}\setminus\SetD{c?}}\right)$
 \end_inset
 
 
@@ -2504,11 +2689,27 @@ C_{
 \backslash
 _}'=
 \backslash
-SetD{
+left(
 \backslash
-Mu{p:P}{c?
+mbf{let}
 \backslash
-in C_{p}}
+,p
+\backslash
+defs
+\backslash
+Muu{p:
+\backslash
+mbf P}{p
+\backslash
+in P}{c?
+\backslash
+in C_{p}}@C_{
+\backslash
+_}
+\backslash
+fovr
+\backslash
+SetD{p
 \backslash
 mapsto C_{p}
 \backslash
@@ -2516,9 +2717,7 @@ setminus
 \backslash
 SetD{c?}}
 \backslash
-fovr C_{
-\backslash
-_}
+right)
 \end_layout
 
 \end_inset
@@ -2686,6 +2885,519 @@ Let
 
 
 \begin_inset Formula $\bigcup_{p}C_{p}'=\left(\bigcup_{p\neq q}C_{p}'\right)\cup C_{q}'=\left(\bigcup_{p\neq q}C_{p}\right)\cup\left(C_{q}\setminus\SetD{c?}\right)=\left(\left(\bigcup_{p\neq q}C_{p}\right)\cup C_{q}\right)\setminus\left(\SetD{c?}\setminus\left(\bigcup_{p\neq q}C_{p}\right)\right)=C\setminus\SetD{c?}=C'$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Moving counters.
+\end_layout
+
+\begin_layout Standard
+Counters can be moved from place to place.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex THOperation
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "operation:mcounter"
+
+\end_inset
+
+Move an onboard counter 
+\begin_inset Formula $c?$
+\end_inset
+
+ from its place to an onboard place 
+\begin_inset Formula $p?$
+\end_inset
+
+.
+ If the counter 
+\begin_inset Formula $c?$
+\end_inset
+
+ is not on the board or the place 
+\begin_inset Formula $p?$
+\end_inset
+
+ is not on the board then the operations skips.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex OZSchema
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+MCounter1
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Xi Counter$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Xi Counter
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Xi Place$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Xi Place
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Delta Dist$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Delta Dist
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $c?:\mbf C$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+c?:
+\backslash
+mbf C
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $p?:\mbf P$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+p?:
+\backslash
+mbf P
+\backslash
+ST
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $c?\in C$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+c?
+\backslash
+in C
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $p?\in P$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+p?
+\backslash
+in P
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $C_{\_}'=(\mbf{let}\,p\defs\Muu{p:\mbf P}{p\in P}{c?\in C_{p}}@$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+C_{
+\backslash
+_}'=(
+\backslash
+mbf{let}
+\backslash
+,p
+\backslash
+defs
+\backslash
+Muu{p:
+\backslash
+mbf P}{p
+\backslash
+in P}{c?
+\backslash
+in C_{p}}@
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{C_{\_}'=(\,}\IfThenElse{p=p?}{C_{\_}}{C_{\_}\fovr\SetD{p?\mapsto C_{p?}\cup\SetD{c?},p\mapsto C_{p}\setminus\SetD{c?}})}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+phantom{C_{
+\backslash
+_}'=(
+\backslash
+,}
+\backslash
+IfThenElse{p=p?}{C_{
+\backslash
+_}}{C_{
+\backslash
+_}
+\backslash
+fovr
+\backslash
+SetD{p?
+\backslash
+mapsto C_{p?}
+\backslash
+cup
+\backslash
+SetD{c?},p
+\backslash
+mapsto C_{p}
+\backslash
+setminus
+\backslash
+SetD{c?}})}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex OZzed
+status open
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Sdef{MCounter2}{\Xi Board;c?:\mbf C;p?:\mbf P}{c?\notin C\lor p?\notin P}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sdef{MCounter2}{
+\backslash
+Xi Board;c?:
+\backslash
+mbf C;p?:
+\backslash
+mbf P}{c?
+\backslash
+notin C
+\backslash
+lor p?
+\backslash
+notin P}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex OZzed
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $MCounter\sdef MCounter1\zor MCounter2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+MCounter
+\backslash
+sdef MCounter1
+\backslash
+zor MCounter2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Lemma
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Consistency lemma MCounter
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "lem:mcounter"
+
+\end_inset
+
+
+\begin_inset Formula $\shows\Al{Board\zand MCounter}{Board'}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Lemma
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Skip Lemma
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\shows\All{Board\zand MCounter}{p?=\Muu{p:\mbf P}{p\in P}{c?\in C_{p}}}{\Xi Board}$
 \end_inset
 
 
